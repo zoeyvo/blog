@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Ensure child elements stretch to fill the container */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure consistent box model */
+}
+
+header {
+    background: pink;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    display: flex; /* Ensure header is a block-level element */
+    width: 100%; /* Ensure each element spans the full width */
+    align-items: center; /* Center content vertically in the header */
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensure each element spans the full width */
+    align-items: center; /* Center navigation items vertically */
+}
+
+nav ul {
+    display: flex; /* Ensure nav ul is a flex container */
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:focus,
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+}
+
+main {
+    width: 70%;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+section {
+    padding: 1rem;
+    background: #fff; /* Add a background for contrast */
+    border-radius: 5px; /* Add rounded corners */
+    display: flex; /* Ensure main is a flex container */
+    flex-direction: row; /* Arrange section and aside in a row */
+    
+}
+
+section#about {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+section#about object {
+    border: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+section#contact {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+section#contact a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+section#contact a:hover,
+section#contact a:focus {
+    color: #666;
+    border-bottom: 2px solid #666;
+}
+
+aside {
+    width: 30%;
+    padding: 1rem;
+    background: #eaeaea;
+    border-radius: 5px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%; /* Ensure footer takes 100% width */
+    display: block; /* Ensure footer is a block-level element */
+    width: 100%; /* Ensure each element spans the full width */
+    border-top: 2px solid #555; /* Add a top border for separation */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: underline;
+}
+
