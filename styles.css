@@ -1,15 +1,18 @@
+/* Font Import */
 @font-face {
     font-family: 'RetroPixel';
     src: url('assets/fonts/ByteBounce.ttf') format('truetype');
 }
 
+/* Root Variables */
 :root {
-    --primary-color: rgb(254, 201, 232);
-    --text-color: #000000;
-    --off-white: #fff9f2;
-    --background-color: #222222;
-    --shadow-color: rgba(255, 255, 255, 0.5);
-    --primary-shadow: rgba(255, 255, 255, 0.3);
+    --primary-color: rgb(254, 201, 232); /* Pink for primary elements */
+    --text-color: #000000; /* Default text color */
+    --off-white: #fff9f2; /* Light background color */
+    --background-color: #222222; /* Dark background color */
+    --shadow-color: rgba(255, 255, 255, 0.8); /* Light shadow for dark mode */
+    --primary-shadow: rgba(255, 255, 255, 0.6); /* Subtle shadow for dark mode */
+    --accent-color: rgba(255, 105, 180, 0.9); /* Vibrant accent color */
 }
 
 body.light-mode {
@@ -17,8 +20,9 @@ body.light-mode {
     --text-color: #000000;
     --off-white: #fff9f2;
     --background-color: var(--off-white);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --primary-shadow: rgba(128, 0, 128, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.6); /* Dark shadow for light mode */
+    --primary-shadow: rgba(0, 0, 0, 0.8); /* Subtle shadow for light mode */
+    --accent-color: rgba(255, 105, 180, 0.9);
 }
 
 /* Base Styles */
@@ -46,11 +50,15 @@ header {
     color: var(--off-white);
 }
 
-h2 {
+body.light-mode header {
+    color: var(--text-color);
+}
+
+h1, h2 {
     text-align: center;
 }
 
-/* Navigation */
+/* Navigation Styles */
 nav {
     width: 100%;
     display: flex;
@@ -61,8 +69,7 @@ nav {
 
 nav ul {
     display: flex;
-    align-content: center;
-    align-items: center; 
+    align-items: center;
     list-style: none;
     gap: 2rem;
     margin: 0;
@@ -78,15 +85,21 @@ body.light-mode nav img {
     filter: invert(0);
 }
 
+/* Active Navigation Item */
 nav a.active img {
     transform: scale(1.2);
-    filter: invert(1) drop-shadow(0 0 8px var(--primary-color));
+    filter: invert(0) 
+        drop-shadow(0 0 24px rgba(255, 105, 180, 1)) /* Accent shadow */
+        drop-shadow(0 0 12px rgba(254, 201, 232, 1)); /* Primary shadow */
 }
 
 body.light-mode nav a.active img {
-    filter: invert(0) drop-shadow(0 0 8px var(--primary-color));
+    filter: invert(1)
+        drop-shadow(0 0 24px rgba(255, 105, 180, 1))
+        drop-shadow(0 0 12px rgba(254, 201, 232, 1));
 }
 
+/* Main Content Layout */
 main {
     display: flex;
     flex-direction: row;
@@ -95,33 +108,32 @@ main {
     gap: 1rem;
 }
 
-article {
-    flex: 7;
+/* Article and Aside Styles */
+article, aside {
     background: var(--off-white);
-    display: inline-block;
     border-radius: 15px;
     box-shadow: 0 8px 12px var(--shadow-color);
     transition: transform 0.3s ease;
-    padding: 0 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 100%
+}
+
+article {
+    flex: 7;
 }
 
 aside {
     flex: 3;
     padding-right: 1rem;
-    height: 100%;
-    background: var(--off-white);
-    display: inline-block;
-    border-radius: 15px;
-    box-shadow: 0 8px 12px var(--shadow-color);
-    transition: transform 0.3s ease;
-    box-sizing: border-box;
 }
 
+/* Hover Effects */
 article:hover, aside:hover {
     transform: translateY(-5px);
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
     width: 100%;
     max-width: 800px;
@@ -141,7 +153,7 @@ footer a {
     transition: transform 0.2s ease;
 }
 
-/* Theme Toggle */
+/* Theme Toggle Button */
 .toggle-theme {
     position: fixed;
     top: 1rem;
@@ -167,13 +179,14 @@ footer a {
         width: 100%;
         margin: 0;
         padding: 1rem;
-        box-sizing: border-box;
     }
 
     footer {
         width: calc(100% - 2rem);
+    }
 }
 
+/* Image Header Styles */
 .imgHeader {
     display: flex;
     align-items: center;
