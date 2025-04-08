@@ -85,18 +85,27 @@ body.light-mode nav img {
     filter: invert(0);
 }
 
+nav img:hover {
+    filter: invert(0); /* Invert to black if previously white */
+    filter: drop-shadow(0 0 8px var(--shadow-color)); /* Add light shadow in dark mode */
+}
+
+body.light-mode nav img:hover {
+    filter: invert(1); /* Ensure icons turn white when hovered in light mode */
+    filter: drop-shadow(0 0 8px var(--shadow-color)); /* Add dark shadow in light mode */
+}
+
 /* Active Navigation Item */
 nav a.active img {
     transform: scale(1.2);
-    filter: invert(0) 
-        drop-shadow(0 0 24px rgba(255, 105, 180, 1)) /* Accent shadow */
-        drop-shadow(0 0 12px rgba(254, 201, 232, 1)); /* Primary shadow */
+    filter: drop-shadow(0 0 24px var(--shadow-color)); /* Highlight shadow for active item */
+    filter: invert(1); /* Make the selected icon white in dark mode */
 }
 
 body.light-mode nav a.active img {
-    filter: invert(1)
-        drop-shadow(0 0 24px rgba(255, 105, 180, 1))
-        drop-shadow(0 0 12px rgba(254, 201, 232, 1));
+    transform: scale(1.2);
+    filter: invert(1);
+    filter: drop-shadow(0 0 24px var(--shadow-color)); /* Highlight shadow for active item in light mode */
 }
 
 /* Main Content Layout */
