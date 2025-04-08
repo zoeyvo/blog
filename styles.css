@@ -45,7 +45,7 @@ nav {
     align-items: center;
     width: 100%; /* Ensure nav spans the full width */
     padding: 0; /* Remove any extra padding */
-    margin: 0; /* Remove any extra margin */
+    margin: 1rem 0; /* Remove any extra margin */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -85,10 +85,16 @@ nav img {
 .content-wrapper {
     padding: 1rem;
     display: flex;
-    width: calc(100% - 2rem);
+    width: calc(100% - 3em);
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px; /* Ensures spacing on both sides */
+    box-sizing: border-box; /* Prevents padding from affecting width */
+    overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
 main {
@@ -124,6 +130,7 @@ h2{
 
 aside {
     width: 100%;
+
     box-sizing: border-box; /* Ensures padding/border don't affect dimensions */
     display: flex;
     flex-direction: column; 
@@ -151,6 +158,7 @@ footer {
     border-radius: 15px;
     position: relative; /* Position relative for absolute positioning of child elements */
     bottom: 0; /* Stick to the bottom of the page */
+    margin: 1rem 0;
 }
 
 footer a {

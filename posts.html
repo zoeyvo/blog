@@ -19,8 +19,8 @@
          
     </header>
     <div id="nav"></div>
-    <div class="content-wrapper">
-        <main>
+    <div class="content-wrapper" style="width: 100%;">
+        <main style="width: 100%;">
             <article>
                 <div class="imgHeader">
                     <h2>news</h2>
@@ -31,16 +31,13 @@
                 </p>
             </article>
         </main>
-        <div id="aside"></div>
     </div>
     <footer id="footer"></footer>
     <script type="module">
         import Nav from './components/Nav.js';
-        import Aside from './components/Aside.js';
         import Footer from './components/Footer.js';
 
         document.getElementById('nav').innerHTML = Nav();
-        document.getElementById('aside').innerHTML = Aside();
         document.getElementById('footer').innerHTML = Footer();
     </script>
 </body>
