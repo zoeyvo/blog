@@ -7,7 +7,9 @@
     --primary-color: rgb(254, 201, 232);
     --text-color: #000000;
     --off-white: #fff9f2;
-    --background-color: #222222
+    --background-color: #222222;
+    --shadow-color: rgba(255, 255, 255, 0.5);
+    --primary-shadow: rgba(255, 255, 255, 0.3);
 }
 
 body.light-mode {
@@ -15,6 +17,8 @@ body.light-mode {
     --text-color: #000000;
     --off-white: #fff9f2;
     --background-color: var(--off-white);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-shadow: rgba(128, 0, 128, 0.5);
 }
 
 /* Base Styles */
@@ -42,13 +46,17 @@ header {
     color: var(--off-white);
 }
 
+h2 {
+    text-align: center;
+}
+
 /* Navigation */
 nav {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 nav ul {
@@ -70,6 +78,15 @@ body.light-mode nav img {
     filter: invert(0);
 }
 
+nav a.active img {
+    transform: scale(1.2);
+    filter: invert(1) drop-shadow(0 0 8px var(--primary-color));
+}
+
+body.light-mode nav a.active img {
+    filter: invert(0) drop-shadow(0 0 8px var(--primary-color));
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -80,23 +97,24 @@ main {
 
 article {
     flex: 7;
-    text-align: center;
     background: var(--off-white);
-    display: block;
+    display: inline-block;
     border-radius: 15px;
-    box-shadow: 0 8px 12px rgba(153, 0, 255, 0.5);
+    box-shadow: 0 8px 12px var(--shadow-color);
     transition: transform 0.3s ease;
+    padding: 0 1rem;
 }
 
 aside {
     flex: 3;
-    padding: 0 1rem;
-    text-align: center;
+    padding-right: 1rem;
+    height: 100%;
     background: var(--off-white);
     display: inline-block;
     border-radius: 15px;
-    box-shadow: 0 8px 12px rgba(153, 0, 255, 0.5);
+    box-shadow: 0 8px 12px var(--shadow-color);
     transition: transform 0.3s ease;
+    box-sizing: border-box;
 }
 
 article:hover, aside:hover {
@@ -141,9 +159,36 @@ footer a {
 @media screen and (max-width: 768px) {
     main {
         flex-direction: column;
+        width: calc(100% - 2rem);
+        gap: 2rem;
     }
-    
+
     article, aside {
         width: 100%;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
     }
+
+    footer {
+        width: calc(100% - 2rem);
+}
+
+.imgHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgHeader img, .icon {
+    transition: all 0.3s ease;
+}
+
+.imgHeader img:hover, .icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--primary-shadow));
+}
+
+.icon {
+    margin-top: 0.5rem;
 }
