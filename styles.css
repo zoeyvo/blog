@@ -158,7 +158,8 @@ footer {
     border-radius: 15px;
     position: relative; /* Position relative for absolute positioning of child elements */
     bottom: 0; /* Stick to the bottom of the page */
-    margin: 1rem 0;
+    max-width: 1080px; /* Limit the maximum width */
+    margin: 1rem auto; /* Center the footer horizontally */
 }
 
 footer a {
