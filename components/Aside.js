@@ -7,7 +7,7 @@ export default function Aside() {
                 <h2>resources <img src="assets/hearts.gif" alt="hearts" class="icon" height="30"></h2>
             </div>
             <ul>
-                ${asideLinks.map(link => `<li><a href="${link.href}">${link.label}</a></li>`).join('')}
+                ${asideLinks.map(link => `<li><a href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a></li>`).join('')}
             </ul>
         </aside>
     `;
