@@ -9,44 +9,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Zoey's Archive</h1>
+        <img src="assets/icon.gif" alt="cute bear" class="icon" height="50">
+        <h1>internet witch archives</h1>
+        <!-- CC: https://www.pinterest.com/pin/532902568423818483/ -->
     </header>
-    <nav aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+    <div id="nav"></div>
     <div class="content-wrapper">
         <main>
-            <section id="about">
-                <h2>About Me</h2>
-                <object 
-                    data="assets/2025 Resume v1.pdf" 
-                    type="application/pdf"
-                    width="100%"
-                    height="600px">
-                    <p>Unable to display PDF file. 
-                        <a href="assets/2025 Resume v1.pdf">Download</a> instead.
+            <section>
+                <div class="about-content">
+                    <h2>about me</h2>
+                    <p>Hello! I'm Zoey, a passionate web developer and designer.</p>
+                    <p>
+                        Check out my resume below or feel free to reach out via email or LinkedIn!
                     </p>
-                </object>
+                    <object 
+                        data="assets/2025 Resume v1.pdf" 
+                        type="application/pdf"
+                        width="100%"
+                        height="600px">
+                        <p>Unable to display PDF file. 
+                            <a href="assets/2025 Resume v1.pdf">Download</a> instead.
+                        </p>
+                    </object>
+                </div>
             </section>
         </main>
-        <aside>
-            <h2>Related Links</h2>
-            <ul>
-                <li><a href="#link1">Link 1</a></li>
-                <li><a href="#link2">Link 2</a></li>
-            </ul>
-        </aside>
+        <div id="aside"></div>
     </div>
-    <footer>
-        <p>&copy; 2025 Zoey's Archive | 
-            <a href="https://www.linkedin.com/in/zoeyvo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
-    </footer>
+    <footer id="footer"></footer>
+    <script type="module">
+        import Nav from './components/Nav.js';
+        import Aside from './components/Aside.js';
+        import Footer from './components/Footer.js';
+
+        document.getElementById('nav').innerHTML = Nav();
+        document.getElementById('aside').innerHTML = Aside();
+        document.getElementById('footer').innerHTML = Footer();
+    </script>
 </body>
 </html>
