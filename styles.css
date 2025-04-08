@@ -152,7 +152,7 @@ section#contact a:focus {
 }
 
 h2 {
-    color: black /* Ensure h2 is pink */
+    color: black; /* Ensure h2 is pink */
     text-align: center;
 }
 
