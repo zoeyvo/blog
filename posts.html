@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <script type="module">
+        import ThemeToggle from './components/ThemeToggle.js';
+        const themeToggle = ThemeToggle();
+        document.body.appendChild(themeToggle);
+    </script>
     <header>
         <img src="assets/icon.gif" alt="cute bear" class="icon" height="50">
         <h1>internet witch archives</h1>
