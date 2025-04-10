@@ -86,11 +86,13 @@ nav ul li img {
     filter: invert(0); /* Invert colors for light mode */
 }
 
-nav ul li a.active img {
-    filter: drop-shadow(0 0 5px #ee8ece); /* Pink highlight for active icon */
+
+body nav ul li a.active img {
+    filter: drop-shadow(0 0 5px #ffcaee); /* Pink highlight for active icon */
 }
-body.dark-mode nav ul li a.active img {
-    filter: drop-shadow(0 0 5px #ee8ece); /* Pink highlight for active icon */
+
+body.light-mode nav ul li a.active img {
+    filter: drop-shadow(0 0 5px #ffa7e3); /* Pink highlight for active icon */
 }
 
 body.dark-mode nav ul li img {
@@ -109,7 +111,7 @@ main {
 }
 
 article, aside {
-    background-color: #ede1fd;
+    background-color: #fde0f4; /* Optional: Add a background color */
     border-radius: 15px;
     padding: 0 1rem;
     box-shadow: 4px 4px 15px rgb(0, 0, 0); /* Black shadow for both modes */
