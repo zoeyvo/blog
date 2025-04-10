@@ -181,7 +181,7 @@ a:visited {
     color: rgb(153, 102, 254); /* Visited links */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1920px) {
     .flex-container {
         flex-direction: column; /* Stack items vertically */
     }
