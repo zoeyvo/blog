@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" zoey's personal portfolio & blog">
-    <title>Responsive Layout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" type="image/ico" href="assets/fav.ico">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" zoey's personal portfolio & blog">
+        <title>zoeys archive</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="icon" type="image/ico" href="assets/fav.ico">
 
-    <link rel="manifest" href="/site.webmanifest">
-   
-</head>
-<body>
-    <!-- Remove the inline button, it will be added dynamically -->
-    <header>
-        <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
-        <h1>zoey's archives</h1>
-    </header>
-    <div id="nav"></div>
-    <main>
-        <article>
-            <div class="imgHeader">
+        <link rel="manifest" href="/site.webmanifest">
+    
+    </head>
+    <body>
+        <!-- Remove the inline button, it will be added dynamically -->
+        <header>
+            <h1>zoey's archive</h1>
+            <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
+        </header>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+        <nav id="nav"></nav>
+        <main class="flex-container">
+            <article id="blog">
                 <h2>BLOG</h2>
-            </div>
-            <p> 
-            Nothing to see here yet...
-            </p>
-        </article>
-        <div id="aside"></div> 
-    </main>
-    <footer id="footer"></footer>
+                <p> 
+                Nothing to see here yet...
+                </p>
+            </article>
+            <aside id="aside""></aside>
+        </main>
+        <footer id="footer"></footer>
 
-    <script type="module">
-        import Nav from './components/Nav.js';
-        import Aside from './components/Aside.js';
-        import Footer from './components/Footer.js';
+        <script type="module">
+            import Nav from './components/Nav.js';
+            import Aside from './components/Aside.js';
+            import Footer from './components/Footer.js';
+            import './components/ThemeToggle.js'; // Import the theme toggle script
+            
+            document.getElementById('nav').innerHTML = Nav();
+            document.getElementById('aside').innerHTML = Aside();
+            document.getElementById('footer').innerHTML = Footer();
+        </script>
 
-        document.getElementById('nav').innerHTML = Nav();
-        document.getElementById('aside').innerHTML = Aside();
-        document.getElementById('footer').innerHTML = Footer();
-    </script>
-</body>
+    </body>
 </html>

@@ -1,25 +1,21 @@
-export default function ThemeToggle() {
-    const button = document.createElement('button');
-    button.className = 'toggle-theme';
-    button.id = 'themeToggle';
 
-    // Check localStorage for the saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light-mode') {
-        document.body.classList.add('light-mode');
-        button.textContent = 'Switch to Dark Mode';
-    } else {
-        button.textContent = 'Switch to Light Mode';
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️'; // Light mode icon
     }
 
-    button.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLightMode = document.body.classList.contains('light-mode');
-        button.textContent = isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+    // Add event listener for the toggle button
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        toggleButton.textContent = isDarkMode ? '☀️' : '🌙'; // Toggle icon
 
-        // Save the theme to localStorage
-        localStorage.setItem('theme', isLightMode ? 'light-mode' : 'dark-mode');
+        // Save theme preference to localStorage
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
-
-    return button;
-}
+});

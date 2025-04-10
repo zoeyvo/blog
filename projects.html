@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A WCAG 2.1 compatible responsive layout">
-    <title>Responsive Layout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-    <script type="module">
-        import ThemeToggle from './components/ThemeToggle.js';
-        const themeToggle = ThemeToggle();
-        document.body.appendChild(themeToggle);
-    </script>
-    <header>
-        <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
-        <h1>zoey's archives</h1>
-        <!-- CC: https://www.pinterest.com/pin/532902568423818483/ -->  
-         
-    </header>
-    <div id="nav"></div>
-    <main>
-        <article>
-            <div class="imgHeader">
-                <h2>PROJECTS</h2>
-                <!-- CC: https://www.pinterest.com/pin/8444318045427986/ -->
-            </div>
-            <h3 style="margin-top: 0;">1. Expert Mapping Interface</h3>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" zoey's personal portfolio & blog">
+        <title>zoeys archive</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="icon" type="image/ico" href="assets/fav.ico">
 
-            <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
-                <iframe src="https://expert-mapping-interface-demo-r33c7sek8-zoeyvos-projects.vercel.app/" width="100%" height="500" style="border:none;" title="EMI"></iframe>
-            </div>
-        </article>
-    </main>
-    <footer id="footer"></footer>
-    <script type="module">
-        import Nav from './components/Nav.js';
-        import Footer from './components/Footer.js';
+        <link rel="manifest" href="/site.webmanifest">
+    
+    </head>
+    <body>
+        <!-- Remove the inline button, it will be added dynamically -->
+        <header>
+            <h1>zoey's archive</h1>
+            <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
+        </header>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
 
-        document.getElementById('nav').innerHTML = Nav();
-        document.getElementById('footer').innerHTML = Footer();
-    </script>
-</body>
+        <nav id="nav"></nav>
+        <main class="flex-container">
+            <article>
+                <div>
+                    <h2>PROJECTS</h2>
+                </div>
+                <h3>1. Expert Mapping Interface</h3>
+        
+                <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+                    <iframe src="https://expert-mapping-interface-demo-r33c7sek8-zoeyvos-projects.vercel.app/" width="100%" height="750px" style="border:none;" title="EMI"></iframe>
+                </div>
+            </article>
+        </main>
+        <footer id="footer"></footer>
+
+        <script type="module">
+            import Nav from './components/Nav.js';
+            import Footer from './components/Footer.js';
+            import './components/ThemeToggle.js'; // Import the theme toggle script
+            
+            document.getElementById('nav').innerHTML = Nav();
+            document.getElementById('footer').innerHTML = Footer(); // Ensure Footer is rendered
+        </script>
+
+    </body>
 </html>

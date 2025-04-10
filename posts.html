@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A WCAG 2.1 compatible responsive layout">
-    <title>Responsive Layout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-    <script type="module">
-        import ThemeToggle from './components/ThemeToggle.js';
-        const themeToggle = ThemeToggle();
-        document.body.appendChild(themeToggle);
-    </script>
-    <header>
-        <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
-        <h1>zoey's archives</h1>
-        <!-- CC: https://www.pinterest.com/pin/532902568423818483/ -->  
-         
-    </header>
-    <div id="nav"></div>
-    <main>
-        <article>
-            <div class="imgHeader">
-                <h2>NEWS</h2>
-                <!-- CC: https://www.pinterest.com/pin/8444318045427986/ -->
-            </div>
-            <p>under construction, check back later!</p>
-        </article>
-    </main>
-    <footer id="footer"></footer>
-    <script type="module">
-        import Nav from './components/Nav.js';
-        import Footer from './components/Footer.js';
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=" zoey's personal portfolio & blog">
+        <title>zoeys archive</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="icon" type="image/ico" href="assets/fav.ico">
 
-        document.getElementById('nav').innerHTML = Nav();
-        document.getElementById('footer').innerHTML = Footer();
-    </script>
-</body>
+        <link rel="manifest" href="/site.webmanifest">
+    
+    </head>
+    <body>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+        <header>
+            <h1>zoey's archive</h1>
+            <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
+        </header>
+
+        <nav id="nav"></nav>
+
+        <main class="flex-container">
+            <article>
+                <h2>NEWS</h2>
+                <p> 
+                Under construction...
+                </p>
+            </article>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <script type="module">
+            import Nav from './components/Nav.js';
+            import Footer from './components/Footer.js';
+            import './components/ThemeToggle.js'; // Import the theme toggle script
+            
+            document.getElementById('nav').innerHTML = Nav();
+            document.getElementById('footer').innerHTML = Footer(); // Ensure Footer is rendered
+        </script>
+
+    </body>
 </html>

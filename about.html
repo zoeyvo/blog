@@ -3,53 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Me - My Accessible Blog">
-    <title>About Me - My Accessible Blog</title>
+    <meta name="description" content=" zoey's personal portfolio & blog">
+    <title>zoeys archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/ico" href="assets/fav.ico">
+
+    <link rel="manifest" href="/site.webmanifest">
+   
 </head>
 <body>
-    <script type="module">
-        import ThemeToggle from './components/ThemeToggle.js';
-        const themeToggle = ThemeToggle();
-        document.body.appendChild(themeToggle);
-    </script>
+    <!-- Remove the inline button, it will be added dynamically -->
     <header>
+        <h1>zoey's archive</h1>
         <img src="assets/book.gif" alt="spellbook" class="icon" height="50">
-        <h1>zoey's archives</h1>
-        <!-- CC: https://www.pinterest.com/pin/532902568423818483/ -->
     </header>
-    <div id="nav"></div>
-    <main>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <nav id="nav"></nav>
+    
+    <main class="flex-container">
         <article>
-            <div class="about-content">
-                <h2>ABOUT ME</h2>
-                <p>Hello! I'm Zoey, a passionate web developer and designer.</p>
-                <p>
-                    Check out my resume below or feel free to reach out via email or LinkedIn!
+            <h2>ABOUT ME</h2>
+            <p>Hello! I'm Zoey, a passionate web developer and designer.</p>
+            <p>
+                Check out my resume below or feel free to reach out via email or LinkedIn!
+            </p>
+            <object 
+                data="assets/2025 Resume v1.pdf" 
+                type="application/pdf"
+                width="100%"
+                height="600px">
+                <p>Unable to display PDF file. 
+                    <a href="assets/2025 Resume v1.pdf">Download</a> instead.
                 </p>
-                <object 
-                    data="assets/2025 Resume v1.pdf" 
-                    type="application/pdf"
-                    width="100%"
-                    height="600px">
-                    <p>Unable to display PDF file. 
-                        <a href="assets/2025 Resume v1.pdf">Download</a> instead.
-                    </p>
-                </object>
-            </div>
+            </object>
         </article>
     </main>
     <footer id="footer"></footer>
+
     <script type="module">
         import Nav from './components/Nav.js';
         import Footer from './components/Footer.js';
-
+        import './components/ThemeToggle.js'; // Import the theme toggle script
+        
         document.getElementById('nav').innerHTML = Nav();
-        document.getElementById('footer').innerHTML = Footer();
+        document.getElementById('footer').innerHTML = Footer(); // Ensure Footer is rendered
     </script>
+
 </body>
 </html>
